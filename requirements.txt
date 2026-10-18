@@ -1,9 +1,10 @@
 streamlit
 pymupdf
 pytesseract
-pillow
-langchain-core
-langchain-groq
+Pillow
 python-docx
 python-pptx
 reportlab
+pdf2docx
+langchain-core
+langchain-groq
