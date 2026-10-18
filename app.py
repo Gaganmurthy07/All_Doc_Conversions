@@ -36,11 +36,10 @@ st.markdown("""
 </style>
 <div class="hero">
   <h1>🔄 AveonRush Document Converter</h1>
-  <p>Convert documents using OCR, LangChain, Few-Shot Prompting and Groq AI.</p>
 </div>
 """, unsafe_allow_html=True)
 
-st.write("Choose a conversion, upload a file, and optionally use AI to clean up OCR/text extraction before generating the output.")
+st.write("Choose a conversion, upload a file, and Download the Converted File.")
 
 CONVERSIONS = {
     "PDF → DOCX": (["pdf"], "docx"),
@@ -64,14 +63,12 @@ CONVERSIONS = {
 with st.sidebar:
     st.header("Settings")
     conversion = st.selectbox("Choose conversion", list(CONVERSIONS.keys()))
-    use_ocr = st.checkbox("Use OCR for PDFs and images", value=True)
     
 
 accepted_extensions, output_format = CONVERSIONS[conversion]
 uploaded = st.file_uploader(
     f"Upload a file for {conversion}",
     type=accepted_extensions,
-    help="For scanned PDFs, enable OCR. Large files may take longer to process."
 )
 
 st.info(f"Selected conversion: **{conversion}**  ·  Output format: **.{output_format}**")
@@ -344,8 +341,6 @@ else:
     st.markdown("""
     1. Choose a conversion from the **Settings** dropdown in the sidebar.
     2. Upload a supported file.
-    3. Enable OCR for scanned PDFs or images.
-    4. Optionally enable Groq AI cleanup. Enter your API key, or configure it in Streamlit Secrets.
-    5. Click **Convert file** and download the result.
+    3. Click **Convert file** and download the result.
     """)
     st.warning("For sensitive documents, consider leaving AI cleanup disabled. When enabled, extracted document text is sent to the Groq API.")
