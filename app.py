@@ -20,11 +20,7 @@ from reportlab.lib.units import inch
 from langchain_core.prompts import PromptTemplate, FewShotPromptTemplate
 from langchain_groq import ChatGroq
 
-st.set_page_config(
-    page_title="AveonRush Document Converter",
-    page_icon="🔄",
-    layout="wide"
-)
+
 #st.markdown("""
 #<style>
 #.main .block-container {max-width: 1100px; padding-top: 2rem; padding-bottom: 3rem;}
