@@ -1,0 +1,9 @@
+streamlit
+pymupdf
+pytesseract
+pillow
+langchain-core
+langchain-groq
+python-docx
+python-pptx
+reportlab
