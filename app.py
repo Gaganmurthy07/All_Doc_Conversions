@@ -26,18 +26,6 @@ st.set_page_config(
     layout="wide"
 )
 
-st.markdown("""
-<style>
-.main .block-container {max-width: 1100px; padding-top: 2rem; padding-bottom: 3rem;}
-.hero {padding: 1.4rem 1.5rem; border-radius: 18px; background: linear-gradient(120deg, #14213d, #244b74); color: white; margin-bottom: 1.2rem;}
-.hero h1 {color: white; margin-bottom: .3rem;}
-.hero p {color: #e6edf7; margin-bottom: 0;}
-.small-note {color: #64748b; font-size: .9rem;}
-</style>
-<div class="hero">
-  <h1>🔄 AveonRush Document Converter</h1>
-</div>
-""", unsafe_allow_html=True)
 
 st.write("Choose a conversion, upload a file, and Download the Converted File.")
 
