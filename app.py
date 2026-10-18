@@ -52,7 +52,7 @@ with st.sidebar:
     st.header("Settings")
     conversion = st.selectbox("Choose conversion", list(CONVERSIONS.keys()))
     
-
+ocr_enabled=True
 accepted_extensions, output_format = CONVERSIONS[conversion]
 uploaded = st.file_uploader(
     f"Upload a file for {conversion}",
