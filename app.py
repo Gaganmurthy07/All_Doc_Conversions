@@ -21,7 +21,7 @@ from langchain_core.prompts import PromptTemplate, FewShotPromptTemplate
 from langchain_groq import ChatGroq
 
 st.set_page_config(
-    page_title="Universal AI File Converter",
+    page_title="AveonRush Document Converter",
     page_icon="🔄",
     layout="wide"
 )
@@ -35,7 +35,7 @@ st.markdown("""
 .small-note {color: #64748b; font-size: .9rem;}
 </style>
 <div class="hero">
-  <h1>🔄 Universal AI File Converter</h1>
+  <h1>🔄 AveonRush Document Converter</h1>
   <p>Convert documents using OCR, LangChain, Few-Shot Prompting and Groq AI.</p>
 </div>
 """, unsafe_allow_html=True)
@@ -65,11 +65,7 @@ with st.sidebar:
     st.header("Settings")
     conversion = st.selectbox("Choose conversion", list(CONVERSIONS.keys()))
     use_ocr = st.checkbox("Use OCR for PDFs and images", value=True)
-    use_ai = st.checkbox("Use Groq AI to clean/organize extracted text", value=False)
-    st.caption("AI processing is optional. OCR and standard file conversion can work without a Groq API key.")
-    groq_key = st.text_input("Groq API key", type="password", help="Alternatively, set GROQ_API_KEY in Streamlit Secrets.")
-    model_name = st.text_input("Groq model", value="llama-3.3-70b-versatile")
-    st.caption("Model availability depends on your Groq account. Check Groq's current model list if this model is unavailable.")
+    
 
 accepted_extensions, output_format = CONVERSIONS[conversion]
 uploaded = st.file_uploader(
