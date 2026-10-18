@@ -25,18 +25,7 @@ st.set_page_config(
     page_icon="🔄",
     layout="wide"
 )
-#st.markdown("""
-#<style>
-#.main .block-container {max-width: 1100px; padding-top: 2rem; padding-bottom: 3rem;}
-#.hero {padding: 1.4rem 1.5rem; border-radius: 18px; background: linear-gradient(120deg, #14213d, #244b74); color: white; margin-bottom: 1.2rem;}
-#.hero h1 {color: white; margin-bottom: .3rem;}
-#.hero p {color: #e6edf7; margin-bottom: 0;}
-#.small-note {color: #64748b; font-size: .9rem;}
-#</style>
-#<div class="hero">
- # <h1>🔄 AveonRush Document Converter</h1>
-#</div>
-#""", unsafe_allow_html=True)//
+
 st.title(" 🔄 AveonRush Document Converter")
 st.write("Choose a conversion, upload a file, and Download the Converted File.")
 
@@ -168,7 +157,7 @@ def groq_clean_text(text, api_key, model):
     llm = ChatGroq(
         api_key=api_key,
         model=model,
-        temperature=0
+        temperature=1.6
     )
     chain = few_shot_prompt | llm
     # Keep requests manageable. Chunking by characters is a basic safeguard;
@@ -301,7 +290,7 @@ if uploaded:
         try:
             file_bytes = uploaded.getvalue()
             with st.spinner("Extracting text from your file..."):
-                extracted = extract_input(input_ext, file_bytes, use_ocr)
+                extracted = extract_input(input_ext, file_bytes, ocr_enabled)
             if not extracted.strip():
                 st.warning("No text was detected. If this is a scan, enable OCR or try a clearer file.")
                 st.stop()
