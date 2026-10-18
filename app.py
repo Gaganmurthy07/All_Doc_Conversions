@@ -343,4 +343,4 @@ else:
     2. Upload a supported file.
     3. Click **Convert file** and download the result.
     """)
-    st.warning("For sensitive documents, consider leaving AI cleanup disabled. When enabled, extracted document text is sent to the Groq API.")
+    st.warning("Don't Leave the Page While Processing.")
