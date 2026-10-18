@@ -53,6 +53,7 @@ with st.sidebar:
     conversion = st.selectbox("Choose conversion", list(CONVERSIONS.keys()))
     
 ocr_enabled=True
+use_ai=False
 accepted_extensions, output_format = CONVERSIONS[conversion]
 uploaded = st.file_uploader(
     f"Upload a file for {conversion}",
